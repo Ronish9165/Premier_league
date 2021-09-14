@@ -4,17 +4,23 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.ResultSet;
 import javax.swing.ImageIcon;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.JTableHeader;
 
 public class HomePage implements ActionListener {
     JFrame fr;
     JPanel panel;
-    JLabel lbl_heading, lbl_img, lbl_club, lbl_mp, lbl_won, lbl_draw, lbl_loss, lbl_gf, lbl_ga, lbl_gd, lbl_pts;
+    JLabel lbl_heading, lbl_img, lbl_club, lbl_mp, lbl_won, lbl_draw, lbl_loss, lbl_gf, lbl_ga, lbl_gd, lbl_pts,
+            lbl_mp1, lbl_won1, lbl_draw1, lbl_loss1, lbl_gf1, lbl_ga1, lbl_gd1, lbl_pts1;
     JButton btn_addstd, btn_update, btn_logout;
-    JTextField txt_mp, txt_won, txt_draw, txt_loss, txt_gf, txt_ga, txt_gd, txt_pts;
+    JTextField txt_id;
     ImageIcon image_premier;
     String user;
     Font fon1, fon2;
+    DefaultTableModel model;
+    JTable std;
 
     public HomePage() {
         fr = new JFrame("Homepage");
@@ -27,6 +33,7 @@ public class HomePage implements ActionListener {
 
         fon1 = new Font("arial", Font.BOLD, 22);
         fon2 = new Font("arial", Font.BOLD, 15);
+
 
         //Headings
         lbl_heading = new JLabel("WELCOME " + user);
@@ -41,53 +48,11 @@ public class HomePage implements ActionListener {
         lbl_club.setBounds(30, 275, 100, 20);
         panel.add(lbl_club);
 
-        lbl_mp = new JLabel("MP");
-        lbl_mp.setFont(fon1);
-        lbl_mp.setForeground(Color.darkGray);
-        lbl_mp.setBounds(400, 275, 100, 20);
-        panel.add(lbl_mp);
-
-        lbl_won = new JLabel("W");
-        lbl_won.setFont(fon1);
-        lbl_won.setForeground(Color.darkGray);
-        lbl_won.setBounds(460, 275, 100, 20);
-        panel.add(lbl_won);
-
-        lbl_draw = new JLabel("D");
-        lbl_draw.setFont(fon1);
-        lbl_draw.setForeground(Color.darkGray);
-        lbl_draw.setBounds(515, 275, 100, 20);
-        panel.add(lbl_draw);
-
-        lbl_loss = new JLabel("L");
-        lbl_loss.setFont(fon1);
-        lbl_loss.setForeground(Color.darkGray);
-        lbl_loss.setBounds(568, 275, 100, 20);
-        panel.add(lbl_loss);
-
-        lbl_gf = new JLabel("GF");
-        lbl_gf.setFont(fon1);
-        lbl_gf.setForeground(Color.darkGray);
-        lbl_gf.setBounds(610, 275, 100, 20);
-        panel.add(lbl_gf);
-
-        lbl_ga = new JLabel("GA");
-        lbl_ga.setFont(fon1);
-        lbl_ga.setForeground(Color.darkGray);
-        lbl_ga.setBounds(660, 275, 100, 20);
-        panel.add(lbl_ga);
-
-        lbl_gd = new JLabel("GD");
-        lbl_gd.setFont(fon1);
-        lbl_gd.setForeground(Color.darkGray);
-        lbl_gd.setBounds(705, 275, 100, 20);
-        panel.add(lbl_gd);
-
-        lbl_pts = new JLabel("PTS");
-        lbl_pts.setFont(fon1);
-        lbl_pts.setForeground(Color.darkGray);
-        lbl_pts.setBounds(750, 275, 100, 20);
-        panel.add(lbl_pts);
+        //Textfield
+        txt_id = new JTextField();
+        txt_id.setFont(fon2);
+        txt_id.setBounds(100, 450, 30, 25);
+        panel.add(txt_id);
 
 
         //Buttons
@@ -100,6 +65,7 @@ public class HomePage implements ActionListener {
         btn_update = new JButton("Show");
         btn_update.setFont(fon2);
         btn_update.setBounds(350, 550, 130, 50);
+        btn_addstd.addActionListener(this);
         panel.add(btn_update);
 
         btn_logout = new JButton("Logout");
@@ -121,11 +87,54 @@ public class HomePage implements ActionListener {
         lbl_img = new JLabel(image_premier);
         lbl_img.setBounds(0, 0, 798, 590);
         panel.add(lbl_img);
+        standing();
 
         fr.setSize(815, 750);
         fr.setLayout(null);
         fr.setVisible(true);
 
+    }
+    public void standing(){
+        model= new DefaultTableModel();
+        std= new JTable(model);
+        fon1=new Font("Dialog", Font.BOLD, 22);
+        fon1=new Font("Serif", Font.BOLD, 18);
+        std.setFont(fon1);
+        std.setRowHeight(40);
+        std.setBackground(new Color(211,244,252));
+        model.addColumn("MP");
+        model.addColumn("W");
+        model.addColumn("D");
+        model.addColumn("L");
+        model.addColumn("GF");
+        model.addColumn("GA");
+        model.addColumn("GD");
+        model.addColumn("Pts");
+        JTableHeader header = std.getTableHeader();
+        header.setFont(fon1);
+        header.setBackground(Color.white);
+        header.setForeground(Color.darkGray);
+        std.getTableHeader().setPreferredSize(new Dimension(30,30));
+        try {
+            DbConnection db=new DbConnection();
+            String query="select * from standings";
+            ResultSet rs=db.select(query);
+            DefaultTableModel model=(DefaultTableModel)std.getModel();
+            model.setRowCount(0);
+            int i=0;
+
+            while(rs.next()){
+                System.out.println(rs.getString(1)+" "+rs.getString(2));
+                model.addRow(new Object[]{ rs.getString(2),rs.getString(3),
+                        rs.getString(4),rs.getString(5), rs.getString(6),rs.getString(7),
+                        rs.getString(8),rs.getString(9)});
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        JScrollPane pg = new JScrollPane(std);
+        pg.setBounds(200,300,515,350);
+        panel.add(pg);
     }
 
     public static void main(String[] args) {
@@ -133,8 +142,13 @@ public class HomePage implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
+        if (e.getSource()==btn_update){
+            standing();
+        }
         if (e.getSource() == btn_addstd) {
-            new standings();
+            fr.dispose();
+            new standings(txt_id.getText());
+
         }
     }
 }

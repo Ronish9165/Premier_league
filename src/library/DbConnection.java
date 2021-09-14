@@ -7,6 +7,7 @@ public class DbConnection {
     ResultSet rows;
     Statement st;
     int val;
+    int values;
 
     public DbConnection() {
         // register the driver class
@@ -35,6 +36,15 @@ public class DbConnection {
         return val;
 
     }
+    public  int Update(String query) {
+        try {
+            values=st.executeUpdate(query);
+        }
+        catch(SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return values;
+    }
 
     public ResultSet select(String query) {
         try {
@@ -44,6 +54,7 @@ public class DbConnection {
         }
         return rows;
     }
+
 
     public static void main(String[] args) {
         new DbConnection();

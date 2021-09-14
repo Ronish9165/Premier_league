@@ -105,7 +105,7 @@ public class LoginPage implements ActionListener {
             try {
                 if(rs.next()){
                     JOptionPane.showMessageDialog(fr,"Login Successfull");
-                    new HomePage(username);
+                    new HomePage();
                     fr.dispose();
 
                 }

@@ -16,7 +16,7 @@ public class RegisterPage implements ActionListener {
 
     public RegisterPage() {
         fr = new JFrame("Registration Page");
-        fr.getContentPane().setBackground(Color.CYAN);
+        fr.setForeground(new Color(46, 172, 175));
 
         String[] gender={" ","Male","Female","others"};
 
@@ -26,7 +26,7 @@ public class RegisterPage implements ActionListener {
         //Heading
         lbl_heading = new JLabel("Registration");
         lbl_heading.setFont(fon1);
-        lbl_heading.setForeground(Color.blue);
+        lbl_heading.setForeground(new Color(42, 117, 219));
         lbl_heading.setBounds(120, 10, 250, 40);
         fr.add(lbl_heading);
 

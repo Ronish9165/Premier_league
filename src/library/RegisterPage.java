@@ -4,11 +4,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import  javax.swing.ImageIcon;
 
 public class RegisterPage implements ActionListener {
     JFrame fr;
-    JPanel panel;
-    JLabel lbl_heading, lbl_fname, lbl_lname, lbl_email, lbl_pass, lbl_cpass, lbl_gender;
+    JPanel panel, panel2;
+    ImageIcon background;
+    JLabel lbl_heading, lbl_fname, lbl_lname, lbl_email, lbl_pass, lbl_cpass, lbl_gender, lbl_img;
     JTextField txt_fname, txt_lname, txt_email;
     JPasswordField txt_pass, txt_cpass;
     JComboBox<String> ComboBox;
@@ -17,13 +19,17 @@ public class RegisterPage implements ActionListener {
 
     public RegisterPage() {
         fr = new JFrame("Registration Page");
-        fr.setForeground(new Color(46, 172, 175));
 
         panel = new JPanel();
-        panel.setBounds(0, 0, 500, 500);
-        panel.setBackground(new Color(54, 143, 193));
+        panel.setBounds(80, 60, 490, 500);
+        panel.setBackground(Color.white);
         panel.setLayout(null);
         fr.add(panel);
+
+        panel2 = new JPanel();
+        panel2.setBounds(0, 0, 800, 700);
+        panel2.setLayout(null);
+        fr.add(panel2);
 
         String[] gender={" ","Male","Female","others"};
 
@@ -33,8 +39,8 @@ public class RegisterPage implements ActionListener {
         //Heading
         lbl_heading = new JLabel("Registration");
         lbl_heading.setFont(fon1);
-        lbl_heading.setForeground(new Color(0, 0, 0));
-        lbl_heading.setBounds(120, 10, 250, 40);
+        lbl_heading.setForeground(Color.BLACK);
+        lbl_heading.setBounds(150, 10, 250, 40);
         panel.add(lbl_heading);
 
         //Labels
@@ -122,7 +128,14 @@ public class RegisterPage implements ActionListener {
         panel.add(btn_cancel);
 
 
-        fr.setSize(500, 500);
+        //Image
+        background = new ImageIcon(getClass().getResource("bg.png"));
+        lbl_img = new JLabel(background);
+        lbl_img.setBounds(0, 0, 700, 700);
+        panel2.add(lbl_img);
+
+
+        fr.setSize(700, 700);
         fr.setLayout(null);
         fr.setVisible(true);
     }

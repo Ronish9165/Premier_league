@@ -4,12 +4,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.Graphics;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class LoginPage implements ActionListener {
     JFrame fr;
-    JPanel panel;
+    JPanel panel, panel2;
     JLabel lbl_heading,lbl_account,lbl_username,lbl_password;
     JTextField txt_username;
     JPasswordField txt_password;
@@ -20,10 +21,17 @@ public class LoginPage implements ActionListener {
         fr.getContentPane().setBackground(Color.LIGHT_GRAY);
 
         panel = new JPanel();
-        panel.setBounds(0, 0, 500, 500);
-        panel.setBackground(new Color(56, 132, 191, 220));
+        panel.setBounds(150, 100, 500, 500);
+        panel.setBackground(new Color(255, 255, 255, 220));
         panel.setLayout(null);
         fr.add(panel);
+
+        panel2 = new JPanel();
+        panel2.setBounds(0, 0, 800, 700);
+        panel2.setBackground(new Color(56, 132, 191, 220));
+        panel2.setLayout(null);
+        fr.add(panel2);
+
 
         //Fonts
         fon1=new Font("arial",Font.BOLD,25);
@@ -89,10 +97,12 @@ public class LoginPage implements ActionListener {
         btn_reg.addActionListener(this);
         panel.add(btn_reg);
 
-        fr.setSize(500,500);
+        fr.setSize(700,700);
         fr.setLayout(null);
         fr.setVisible(true);
     }
+
+
     public static void main(String[] args){
 
         new LoginPage();

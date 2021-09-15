@@ -101,10 +101,11 @@ public class standings implements ActionListener {
         btn_back.addActionListener(this);
         panel.add(btn_back);
 
-        String id_no = id;
+        String id_no=id;
         DbConnection db = new DbConnection();
         String query = "select * from standings where id='" + id_no + "'";
         ResultSet rs = db.select(query);
+
         try {
             while (rs.next()) {
 
@@ -159,10 +160,11 @@ public class standings implements ActionListener {
 
             }
 
+
             //Image
             image_premier = new ImageIcon(getClass().getResource("premier.png"));
             lbl_img = new JLabel(image_premier);
-            lbl_img.setBounds(0, 0, 798, 470);
+            lbl_img.setBounds(0, 0, 798, 500);
             panel.add(lbl_img);
 
             fr.setSize(815, 750);
@@ -191,7 +193,7 @@ public class standings implements ActionListener {
                         ",gd='" + txt_gd.getText() + "',pts='" + txt_pts.getText() + "'where id = '"+id+"'";
                 DbConnection db = new DbConnection();
                 int rs = db.Update(query);
-                JOptionPane.showMessageDialog(btn_update, "Update successsful");
+                JOptionPane.showMessageDialog(btn_update, "Update successful");
             } finally {
 
             }

@@ -28,7 +28,7 @@ public class HomePage implements ActionListener {
         panel.setLayout(null);
         fr.add(panel);
 
-
+        //Fonts
         fon1 = new Font("arial", Font.BOLD, 22);
         fon2 = new Font("arial", Font.BOLD, 15);
 
@@ -52,17 +52,16 @@ public class HomePage implements ActionListener {
         lbl_cid.setBounds(10, 265, 100, 20);
         panel.add(lbl_cid);
 
-        //Textfield
+        //Text field
         txt_id = new JTextField();
-        txt_id.setFont(fon2);
-        txt_id.setBounds(100, 570, 30, 25);
+        txt_id.setFont(fon1);
+        txt_id.setBounds(100, 570, 70, 30);
         panel.add(txt_id);
-
 
         //Buttons
         btn_addstd = new JButton("Add Standings");
         btn_addstd.setFont(fon2);
-        btn_addstd.setBounds(155, 570, 170, 50);
+        btn_addstd.setBounds(200, 570, 150, 50);
         btn_addstd.addActionListener(this);
         panel.add(btn_addstd);
 
@@ -127,6 +126,7 @@ public class HomePage implements ActionListener {
                         rs.getString(4),rs.getString(5), rs.getString(6),rs.getString(7),
                         rs.getString(8),rs.getString(9)});
             }
+
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -144,8 +144,14 @@ public class HomePage implements ActionListener {
             standing();
         }
         if (e.getSource() == btn_addstd) {
-            fr.dispose();
-            new standings(txt_id.getText());
+            if (txt_id.getText().length()==0){
+                JOptionPane.showMessageDialog(fr,"Insert ID First");
+            return;
+            }
+            else {
+                fr.dispose();
+                new standings(txt_id.getText());
+            }
 
         }
     }

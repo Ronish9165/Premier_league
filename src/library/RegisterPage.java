@@ -143,7 +143,8 @@ public class RegisterPage implements ActionListener {
 
         if (e.getSource() == btn_register) {
             DbConnection db = new DbConnection();
-            String query = "insert into usr_tbl(fullname,lastname,username,pass,cpass,gender) values('" + fulname + "','" + lastname + "','" + username + "','" + pass + "','" + cpass + "','"+gender+"')";
+            String query = "insert into usr_tbl(fullname,lastname,username,pass,cpass,gender) " +
+                    "values('" + fulname + "','" + lastname + "','" + username + "','" + pass + "','" + cpass + "','"+gender+"')";
             int ans = db.insert(query);
             if (ans > 0) {
                 JOptionPane.showMessageDialog(fr, "Registration Completed");

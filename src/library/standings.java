@@ -10,11 +10,10 @@ import java.sql.SQLException;
 public class standings implements ActionListener {
     JFrame fr;
     JPanel panel;
-    JLabel lbl_heading, lbl_img, lbl_club, lbl_mp, lbl_won, lbl_draw, lbl_loss, lbl_gf, lbl_ga, lbl_gd, lbl_pts;
-    JButton btn_update, btn_logout, btn_back;
+    JLabel lbl_img, lbl_club, lbl_mp, lbl_won, lbl_draw, lbl_loss, lbl_gf, lbl_ga, lbl_gd, lbl_pts;
+    JButton btn_update, btn_back;
     JTextField txt_mp, txt_won, txt_draw, txt_loss, txt_gf, txt_ga, txt_gd, txt_pts;
     ImageIcon image_premier;
-    String user;
     Font fon1, fon2;
     String id;
 
@@ -38,55 +37,55 @@ public class standings implements ActionListener {
         lbl_club = new JLabel("Club");
         lbl_club.setFont(fon1);
         lbl_club.setForeground(Color.darkGray);
-        lbl_club.setBounds(30, 220, 100, 20);
+        lbl_club.setBounds(30, 205, 100, 20);
         panel.add(lbl_club);
 
         lbl_mp = new JLabel("MP");
         lbl_mp.setFont(fon1);
         lbl_mp.setForeground(Color.darkGray);
-        lbl_mp.setBounds(400, 220, 100, 20);
+        lbl_mp.setBounds(400, 205, 100, 20);
         panel.add(lbl_mp);
 
         lbl_won = new JLabel("W");
         lbl_won.setFont(fon1);
         lbl_won.setForeground(Color.darkGray);
-        lbl_won.setBounds(460, 220, 100, 20);
+        lbl_won.setBounds(460, 205, 100, 20);
         panel.add(lbl_won);
 
         lbl_draw = new JLabel("D");
         lbl_draw.setFont(fon1);
         lbl_draw.setForeground(Color.darkGray);
-        lbl_draw.setBounds(515, 220, 100, 20);
+        lbl_draw.setBounds(515, 205, 100, 20);
         panel.add(lbl_draw);
 
         lbl_loss = new JLabel("L");
         lbl_loss.setFont(fon1);
         lbl_loss.setForeground(Color.darkGray);
-        lbl_loss.setBounds(568, 220, 100, 20);
+        lbl_loss.setBounds(568, 205, 100, 20);
         panel.add(lbl_loss);
 
         lbl_gf = new JLabel("GF");
         lbl_gf.setFont(fon1);
         lbl_gf.setForeground(Color.darkGray);
-        lbl_gf.setBounds(610, 220, 100, 20);
+        lbl_gf.setBounds(610, 205, 100, 20);
         panel.add(lbl_gf);
 
         lbl_ga = new JLabel("GA");
         lbl_ga.setFont(fon1);
         lbl_ga.setForeground(Color.darkGray);
-        lbl_ga.setBounds(660, 220, 100, 20);
+        lbl_ga.setBounds(660, 205, 100, 20);
         panel.add(lbl_ga);
 
         lbl_gd = new JLabel("GD");
         lbl_gd.setFont(fon1);
         lbl_gd.setForeground(Color.darkGray);
-        lbl_gd.setBounds(705, 220, 100, 20);
+        lbl_gd.setBounds(705, 205, 100, 20);
         panel.add(lbl_gd);
 
         lbl_pts = new JLabel("PTS");
         lbl_pts.setFont(fon1);
         lbl_pts.setForeground(Color.darkGray);
-        lbl_pts.setBounds(750, 220, 100, 20);
+        lbl_pts.setBounds(750, 205, 100, 20);
         panel.add(lbl_pts);
 
         //Buttons

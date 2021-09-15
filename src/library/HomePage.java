@@ -12,12 +12,10 @@ import javax.swing.table.JTableHeader;
 public class HomePage implements ActionListener {
     JFrame fr;
     JPanel panel;
-    JLabel lbl_heading, lbl_img, lbl_club, lbl_mp, lbl_won, lbl_draw, lbl_loss, lbl_gf, lbl_ga, lbl_gd, lbl_pts,
-            lbl_mp1, lbl_won1, lbl_draw1, lbl_loss1, lbl_gf1, lbl_ga1, lbl_gd1, lbl_pts1;
+    JLabel lbl_heading, lbl_img, lbl_club, lbl_cid;
     JButton btn_addstd, btn_update, btn_logout;
     JTextField txt_id;
     ImageIcon image_premier;
-    String user;
     Font fon1, fon2;
     DefaultTableModel model;
     JTable std;
@@ -36,41 +34,41 @@ public class HomePage implements ActionListener {
 
 
         //Headings
-        lbl_heading = new JLabel("WELCOME " + user);
+        lbl_heading = new JLabel("WELCOME ");
         lbl_heading.setFont(fon1);
         lbl_heading.setForeground(Color.red);
-        lbl_heading.setBounds(250, 25, 300, 30);
+        lbl_heading.setBounds(250, 15, 300, 30);
         panel.add(lbl_heading);
 
         lbl_club = new JLabel("Club");
         lbl_club.setFont(fon1);
         lbl_club.setForeground(Color.darkGray);
-        lbl_club.setBounds(30, 275, 100, 20);
+        lbl_club.setBounds(70, 265, 100, 20);
         panel.add(lbl_club);
+
+        lbl_cid = new JLabel("C.Id");
+        lbl_cid.setFont(fon1);
+        lbl_cid.setForeground(Color.darkGray);
+        lbl_cid.setBounds(10, 265, 100, 20);
+        panel.add(lbl_cid);
 
         //Textfield
         txt_id = new JTextField();
         txt_id.setFont(fon2);
-        txt_id.setBounds(100, 450, 30, 25);
+        txt_id.setBounds(100, 570, 30, 25);
         panel.add(txt_id);
 
 
         //Buttons
         btn_addstd = new JButton("Add Standings");
         btn_addstd.setFont(fon2);
-        btn_addstd.setBounds(155, 550, 170, 50);
+        btn_addstd.setBounds(155, 570, 170, 50);
         btn_addstd.addActionListener(this);
         panel.add(btn_addstd);
 
-        btn_update = new JButton("Show");
-        btn_update.setFont(fon2);
-        btn_update.setBounds(350, 550, 130, 50);
-        btn_addstd.addActionListener(this);
-        panel.add(btn_update);
-
         btn_logout = new JButton("Logout");
         btn_logout.setFont(fon1);
-        btn_logout.setBounds(555, 600, 160, 30);
+        btn_logout.setBounds(645, 10, 140, 30);
         btn_logout.setBackground(Color.white);
         panel.add(btn_logout);
 
@@ -100,7 +98,7 @@ public class HomePage implements ActionListener {
         fon1=new Font("Dialog", Font.BOLD, 22);
         fon1=new Font("Serif", Font.BOLD, 18);
         std.setFont(fon1);
-        std.setRowHeight(40);
+        std.setRowHeight(50);
         std.setBackground(new Color(211,244,252));
         model.addColumn("MP");
         model.addColumn("W");
@@ -114,7 +112,7 @@ public class HomePage implements ActionListener {
         header.setFont(fon1);
         header.setBackground(Color.white);
         header.setForeground(Color.darkGray);
-        std.getTableHeader().setPreferredSize(new Dimension(30,30));
+        std.getTableHeader().setPreferredSize(new Dimension(30,45));
         try {
             DbConnection db=new DbConnection();
             String query="select * from standings";
@@ -133,7 +131,7 @@ public class HomePage implements ActionListener {
             System.out.println(e.getMessage());
         }
         JScrollPane pg = new JScrollPane(std);
-        pg.setBounds(200,300,515,350);
+        pg.setBounds(285,247,515,298);
         panel.add(pg);
     }
 

@@ -132,13 +132,13 @@ public class LoginPage implements ActionListener {
             ResultSet rs=db.select(query);
             try {
                 if(rs.next()){
-                    JOptionPane.showMessageDialog(fr,"Login Successfull");
+                    JOptionPane.showMessageDialog(fr,"Login Successful");
                     new HomePage();
                     fr.dispose();
 
                 }
                 else{
-                    JOptionPane.showMessageDialog(fr,"Invalid username and password");
+                    JOptionPane.showMessageDialog(fr,"Invalid Username and Password");
                 }
             } catch (SQLException throwables) {
                 throwables.printStackTrace();

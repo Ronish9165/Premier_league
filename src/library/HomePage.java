@@ -12,10 +12,10 @@ import javax.swing.table.JTableHeader;
 public class HomePage implements ActionListener {
     JFrame fr;
     JPanel panel;
-    JLabel lbl_heading, lbl_img, lbl_club, lbl_cid;
+    JLabel lbl_heading, lbl_img, lbl_img1, lbl_club, lbl_cid;
     JButton btn_addstd, btn_update, btn_logout;
     JTextField txt_id;
-    ImageIcon image_premier;
+    ImageIcon image_premier, image_background;
     Font fon1, fon2;
     DefaultTableModel model;
     JTable std;
@@ -34,22 +34,16 @@ public class HomePage implements ActionListener {
 
 
         //Headings
-        lbl_heading = new JLabel("WELCOME ");
-        lbl_heading.setFont(fon1);
-        lbl_heading.setForeground(Color.red);
-        lbl_heading.setBounds(250, 15, 300, 30);
-        panel.add(lbl_heading);
-
         lbl_club = new JLabel("Club");
         lbl_club.setFont(fon1);
         lbl_club.setForeground(Color.darkGray);
-        lbl_club.setBounds(70, 265, 100, 20);
+        lbl_club.setBounds(70, 220, 100, 20);
         panel.add(lbl_club);
 
         lbl_cid = new JLabel("C.Id");
         lbl_cid.setFont(fon1);
         lbl_cid.setForeground(Color.darkGray);
-        lbl_cid.setBounds(10, 265, 100, 20);
+        lbl_cid.setBounds(10, 220, 100, 20);
         panel.add(lbl_cid);
 
         //Text field
@@ -67,7 +61,7 @@ public class HomePage implements ActionListener {
 
         btn_logout = new JButton("Logout");
         btn_logout.setFont(fon1);
-        btn_logout.setBounds(645, 10, 140, 30);
+        btn_logout.setBounds(645, 500, 120, 40);
         btn_logout.setBackground(Color.white);
         panel.add(btn_logout);
 
@@ -82,8 +76,15 @@ public class HomePage implements ActionListener {
         //Image
         image_premier = new ImageIcon(getClass().getResource("premier.png"));
         lbl_img = new JLabel(image_premier);
-        lbl_img.setBounds(0, 0, 798, 590);
+        lbl_img.setBounds(0, 0, 798, 500);
         panel.add(lbl_img);
+
+        image_background = new ImageIcon(getClass().getResource("background1.png"));
+        lbl_img1 = new JLabel(image_background);
+        lbl_img1.setBounds(0, 495, 920, 600);
+        panel.add(lbl_img1);
+
+
         standing();
 
         fr.setSize(815, 750);
@@ -131,7 +132,7 @@ public class HomePage implements ActionListener {
             System.out.println(e.getMessage());
         }
         JScrollPane pg = new JScrollPane(std);
-        pg.setBounds(285,247,515,298);
+        pg.setBounds(285,200,515,298);
         panel.add(pg);
     }
 

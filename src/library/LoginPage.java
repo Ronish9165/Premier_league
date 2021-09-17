@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
+import javax.swing.border.LineBorder;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
@@ -21,8 +22,9 @@ public class LoginPage implements ActionListener {
         fr=new JFrame("Login Page");
 
         panel = new JPanel();
-        panel.setBounds(100, 70, 450, 500);
+        panel.setBounds(120, 70, 450, 500);
         panel.setBackground(Color.white);
+        panel.setBorder(new LineBorder(new Color(0, 0, 0),4));
         panel.setLayout(null);
         fr.add(panel);
 
@@ -35,7 +37,7 @@ public class LoginPage implements ActionListener {
 
         //Fonts
         fon1=new Font("arial",Font.BOLD,25);
-        fon2=new Font("arial",Font.BOLD,15);
+        fon2=new Font("arial",Font.BOLD,18);
 
         //Heading
         lbl_heading=new JLabel("USER LOGIN");
@@ -62,7 +64,7 @@ public class LoginPage implements ActionListener {
         lbl_account=new JLabel("Don't have an account?");
         lbl_account.setFont(fon2);
         lbl_account.setForeground(Color.BLACK);
-        lbl_account.setBounds(30,400,200,40);
+        lbl_account.setBounds(30,400,210,40);
         panel.add(lbl_account);
 
         //TextField password
@@ -92,8 +94,9 @@ public class LoginPage implements ActionListener {
 
         btn_reg=new JButton("Sign Up");
         btn_reg.setFont(fon1);
+        btn_reg.setBackground(Color.white);
         btn_reg.setForeground(Color.red);
-        btn_reg.setBounds(200,405,150,30);
+        btn_reg.setBounds(235,405,150,30);
         btn_reg.addActionListener(this);
         panel.add(btn_reg);
 

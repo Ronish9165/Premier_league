@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import  javax.swing.ImageIcon;
+import javax.swing.border.LineBorder;
 
 public class RegisterPage implements ActionListener {
     JFrame fr;
@@ -21,8 +22,9 @@ public class RegisterPage implements ActionListener {
         fr = new JFrame("Registration Page");
 
         panel = new JPanel();
-        panel.setBounds(80, 60, 490, 500);
+        panel.setBounds(90, 60, 490, 500);
         panel.setBackground(Color.white);
+        panel.setBorder(new LineBorder(new Color(0, 0, 0),4));
         panel.setLayout(null);
         fr.add(panel);
 

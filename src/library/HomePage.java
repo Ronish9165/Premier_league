@@ -61,7 +61,7 @@ public class HomePage implements ActionListener {
 
         btn_logout = new JButton("Logout");
         btn_logout.setFont(fon1);
-        btn_logout.setBounds(645, 500, 120, 40);
+        btn_logout.setBounds(665, 10, 120, 40);
         btn_logout.setBackground(Color.white);
         panel.add(btn_logout);
 

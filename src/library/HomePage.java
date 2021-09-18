@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.ResultSet;
 import javax.swing.ImageIcon;
+import javax.swing.border.LineBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 
@@ -50,6 +51,7 @@ public class HomePage implements ActionListener {
         txt_id = new JTextField();
         txt_id.setFont(fon1);
         txt_id.setBounds(100, 570, 70, 30);
+        txt_id.setBorder(new LineBorder(new Color(0, 0, 0),4));
         panel.add(txt_id);
 
         //Buttons

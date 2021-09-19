@@ -13,7 +13,7 @@ import javax.swing.table.JTableHeader;
 public class HomePage implements ActionListener {
     JFrame fr;
     JPanel panel;
-    JLabel lbl_heading, lbl_img, lbl_img1, lbl_club, lbl_cid;
+    JLabel lbl_img, lbl_img1, lbl_club, lbl_cid;
     JButton btn_addstd, btn_update, btn_logout;
     JTextField txt_id;
     ImageIcon image_premier, image_background;

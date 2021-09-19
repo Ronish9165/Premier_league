@@ -29,7 +29,7 @@ public class standings implements ActionListener {
         panel.setLayout(null);
         fr.add(panel);
 
-
+        //Fonts
         fon1 = new Font("arial", Font.BOLD, 22);
         fon2 = new Font("arial", Font.BOLD, 15);
 

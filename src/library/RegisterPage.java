@@ -35,6 +35,7 @@ public class RegisterPage implements ActionListener {
 
         String[] gender={" ","Male","Female","others"};
 
+        //Fonts
         fon1 = new Font("arial", Font.BOLD, 22);
         fon2 = new Font("arial", Font.BOLD, 18);
 

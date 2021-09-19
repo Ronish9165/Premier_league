@@ -33,8 +33,6 @@ public class LoginPage implements ActionListener {
         panel2.setLayout(null);
         fr.add(panel2);
 
-
-
         //Fonts
         fon1=new Font("arial",Font.BOLD,25);
         fon2=new Font("arial",Font.BOLD,18);

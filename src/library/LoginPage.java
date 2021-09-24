@@ -22,7 +22,7 @@ public class LoginPage implements ActionListener {
         fr=new JFrame("Login Page");
 
         pan = new JPanel();
-        pan.setBounds(120, 70, 450, 500);
+        pan.setBounds(120, 70, 430, 500);
         pan.setBackground(Color.white);
         pan.setBorder(new LineBorder(new Color(0, 0, 0),4));
         pan.setLayout(null);
@@ -45,48 +45,47 @@ public class LoginPage implements ActionListener {
         pan.add(lbl_heading);
 
         //Label
-        lbl_username=new JLabel("Username");
+        lbl_username=new JLabel("Username:");
         lbl_username.setFont(fon1);
         lbl_username.setForeground(Color.BLACK);
-        lbl_username.setBounds(25,100,120,40);
+        lbl_username.setBounds(45,90,130,40);
         pan.add(lbl_username);
 
 
         //label for password
-        lbl_password=new JLabel("Password");
+        lbl_password=new JLabel("Password:");
         lbl_password.setFont(fon1);
         lbl_password.setForeground(Color.BLACK);
-        lbl_password.setBounds(25,190,120,40);
+        lbl_password.setBounds(45,210,125,40);
         pan.add(lbl_password);
 
         lbl_account=new JLabel("Don't have an account?");
         lbl_account.setFont(fon2);
         lbl_account.setForeground(Color.BLACK);
-        lbl_account.setBounds(30,400,210,40);
+        lbl_account.setBounds(30,430,210,40);
         pan.add(lbl_account);
 
-        //TextField password
+        //TextField
         txt_password=new JPasswordField();
         txt_password.setFont(fon2);
-        txt_password.setBounds(155,190,220,40);
+        txt_password.setBounds(50,250,290,40);
         pan.add(txt_password);
 
-        //TextField
         txt_username=new JTextField();
         txt_username.setFont(fon2);
-        txt_username.setBounds(155,100,220,40);
+        txt_username.setBounds(50,130,290,40);
         pan.add(txt_username);
 
         //Buttons
         btn_login=new JButton("Login");
         btn_login.setFont(fon1);
-        btn_login.setBounds(90,300,150,40);
+        btn_login.setBounds(50,350,150,40);
         btn_login.addActionListener(this);
         pan.add(btn_login);
 
         btn_exit=new JButton("Exit");
         btn_exit.setFont(fon1);
-        btn_exit.setBounds(270,300,150,40);
+        btn_exit.setBounds(220,350,150,40);
         btn_exit.addActionListener(this);
         pan.add(btn_exit);
 
@@ -94,7 +93,7 @@ public class LoginPage implements ActionListener {
         btn_reg.setFont(fon1);
         btn_reg.setBackground(Color.white);
         btn_reg.setForeground(Color.red);
-        btn_reg.setBounds(235,405,150,30);
+        btn_reg.setBounds(235,435,150,30);
         btn_reg.addActionListener(this);
         pan.add(btn_reg);
 

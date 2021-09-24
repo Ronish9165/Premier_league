@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 
 public class DbConnectionTest {
 
-    //Test1: pass
+    //Test 1: pass
     @org.junit.Test
     public void insert() {
         String fulname = "Test";
@@ -23,7 +23,7 @@ public class DbConnectionTest {
     }
 
 
-    //Test2: Pass
+    //Test 2: Pass
     @org.junit.Test
     public void select() throws SQLException {
         String result;
@@ -38,7 +38,7 @@ public class DbConnectionTest {
     }
 
 
-    //Test3: Fail
+    //Test 3: Fail
     @org.junit.Test
     public void update() {
         DbConnection db = new DbConnection();
@@ -47,7 +47,7 @@ public class DbConnectionTest {
         assertEquals(1, row);
     }
 
-    //Test4: Fail
+    //Test 4: Fail
     @org.junit.Test
     public void test_delete() {
         DbConnection db = new DbConnection();
@@ -56,7 +56,7 @@ public class DbConnectionTest {
         assertEquals(1, row);
     }
 
-    //Test5: Fail
+    //Test 5: Fail
     @org.junit.Test
     public void test_login() throws SQLException {
         String username;

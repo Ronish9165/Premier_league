@@ -12,7 +12,7 @@ import javax.swing.table.JTableHeader;
 
 public class HomePage implements ActionListener {
     JFrame fr;
-    JPanel panel;
+    JPanel pan;
     JLabel lbl_img, lbl_img1, lbl_club, lbl_cid;
     JButton btn_addstd, btn_update, btn_logout;
     JTextField txt_id;
@@ -24,10 +24,10 @@ public class HomePage implements ActionListener {
     public HomePage() {
         fr = new JFrame("Homepage");
 
-        panel = new JPanel();
-        panel.setBounds(0, 0, 800, 750);
-        panel.setLayout(null);
-        fr.add(panel);
+        pan = new JPanel();
+        pan.setBounds(0, 0, 800, 750);
+        pan.setLayout(null);
+        fr.add(pan);
 
         //Fonts
         fon1 = new Font("arial", Font.BOLD, 22);
@@ -39,33 +39,33 @@ public class HomePage implements ActionListener {
         lbl_club.setFont(fon1);
         lbl_club.setForeground(Color.darkGray);
         lbl_club.setBounds(70, 220, 100, 20);
-        panel.add(lbl_club);
+        pan.add(lbl_club);
 
         lbl_cid = new JLabel("C.Id");
         lbl_cid.setFont(fon1);
         lbl_cid.setForeground(Color.darkGray);
         lbl_cid.setBounds(10, 220, 100, 20);
-        panel.add(lbl_cid);
+        pan.add(lbl_cid);
 
         //Text field
         txt_id = new JTextField();
         txt_id.setFont(fon1);
         txt_id.setBounds(100, 570, 70, 30);
         txt_id.setBorder(new LineBorder(new Color(0, 0, 0),4));
-        panel.add(txt_id);
+        pan.add(txt_id);
 
         //Buttons
         btn_addstd = new JButton("Add Standings");
         btn_addstd.setFont(fon2);
         btn_addstd.setBounds(200, 570, 150, 50);
         btn_addstd.addActionListener(this);
-        panel.add(btn_addstd);
+        pan.add(btn_addstd);
 
         btn_logout = new JButton("Logout");
         btn_logout.setFont(fon1);
         btn_logout.setBounds(665, 10, 120, 40);
         btn_logout.setBackground(new Color(108, 215, 255));
-        panel.add(btn_logout);
+        pan.add(btn_logout);
 
 
         btn_logout.addActionListener(new ActionListener() {
@@ -79,12 +79,12 @@ public class HomePage implements ActionListener {
         image_premier = new ImageIcon(getClass().getResource("premier.png"));
         lbl_img = new JLabel(image_premier);
         lbl_img.setBounds(0, 0, 798, 500);
-        panel.add(lbl_img);
+        pan.add(lbl_img);
 
         image_background = new ImageIcon(getClass().getResource("background1.png"));
         lbl_img1 = new JLabel(image_background);
         lbl_img1.setBounds(0, 495, 920, 600);
-        panel.add(lbl_img1);
+        pan.add(lbl_img1);
 
 
         standing();
@@ -135,7 +135,7 @@ public class HomePage implements ActionListener {
         }
         JScrollPane pg = new JScrollPane(std);
         pg.setBounds(285,200,515,298);
-        panel.add(pg);
+        pan.add(pg);
     }
 
     public static void main(String[] args) {

@@ -104,6 +104,7 @@ public class LoginPage implements ActionListener {
         lbl_img.setBounds(0, 0, 700, 700);
         pan2.add(lbl_img);
 
+
         fr.setSize(700,700);
         fr.setLayout(null);
         fr.setVisible(true);

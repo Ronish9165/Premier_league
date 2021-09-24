@@ -165,6 +165,7 @@ public class RegisterPage implements ActionListener {
             if (ans > 0) {
                 JOptionPane.showMessageDialog(fr, "Registration Completed");
                 fr.dispose();
+                new LoginPage();
             }
 
         }

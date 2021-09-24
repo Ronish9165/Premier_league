@@ -12,8 +12,8 @@ import javax.swing.table.JTableHeader;
 
 public class HomePage implements ActionListener {
     JFrame fr;
-    JPanel pan;
-    JLabel lbl_img, lbl_img1, lbl_club, lbl_cid;
+    JPanel pan, pan2;
+    JLabel lbl_img, lbl_img1, lbl_club, lbl_cid, lbl_txt;
     JButton btn_addstd, btn_update, btn_logout;
     JTextField txt_id;
     ImageIcon image_premier, image_background;
@@ -28,6 +28,13 @@ public class HomePage implements ActionListener {
         pan.setBounds(0, 0, 800, 750);
         pan.setLayout(null);
         fr.add(pan);
+
+        pan2 = new JPanel();
+        pan2.setBounds(200, 550, 300, 100);
+        pan2.setBackground(Color.white);
+        pan2.setBorder(new LineBorder(new Color(0, 0, 0),4));
+        pan2.setLayout(null);
+        pan.add(pan2);
 
         //Fonts
         fon1 = new Font("arial", Font.BOLD, 22);
@@ -47,24 +54,31 @@ public class HomePage implements ActionListener {
         lbl_cid.setBounds(10, 220, 100, 20);
         pan.add(lbl_cid);
 
+        lbl_txt = new JLabel("Insert Id Here");
+        lbl_txt.setFont(fon1);
+        lbl_txt.setForeground(Color.BLACK);
+        lbl_txt.setBounds(75, 10, 150, 20);
+        pan2.add(lbl_txt);
+
         //Text field
         txt_id = new JTextField();
         txt_id.setFont(fon1);
-        txt_id.setBounds(100, 570, 70, 30);
-        txt_id.setBorder(new LineBorder(new Color(0, 0, 0),4));
+        txt_id.setBounds(230, 595, 70, 30);
+        txt_id.setBorder(new LineBorder(new Color(0, 0, 0),1));
         pan.add(txt_id);
 
         //Buttons
         btn_addstd = new JButton("Add Standings");
         btn_addstd.setFont(fon2);
-        btn_addstd.setBounds(200, 570, 150, 50);
+        btn_addstd.setBounds(125, 40, 150, 40);
         btn_addstd.addActionListener(this);
-        pan.add(btn_addstd);
+        pan2.add(btn_addstd);
 
         btn_logout = new JButton("Logout");
         btn_logout.setFont(fon1);
+        btn_logout.setForeground(Color.white);
         btn_logout.setBounds(665, 10, 120, 40);
-        btn_logout.setBackground(new Color(108, 215, 255));
+        btn_logout.setBackground(new Color(54, 16, 58));
         pan.add(btn_logout);
 
 

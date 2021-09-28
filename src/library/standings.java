@@ -24,6 +24,8 @@ public class standings implements ActionListener {
 
         fr = new JFrame("Standings");
 
+
+        //Panels
         pan = new JPanel();
         pan.setBounds(0, 0, 800, 750);
         pan.setLayout(null);

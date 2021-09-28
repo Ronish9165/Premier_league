@@ -24,6 +24,7 @@ public class HomePage implements ActionListener {
     public HomePage() {
         fr = new JFrame("Homepage");
 
+        //Panels
         pan = new JPanel();
         pan.setBounds(0, 0, 800, 750);
         pan.setLayout(null);
@@ -39,7 +40,6 @@ public class HomePage implements ActionListener {
         //Fonts
         fon1 = new Font("arial", Font.BOLD, 22);
         fon2 = new Font("arial", Font.BOLD, 15);
-
 
         //Headings
         lbl_club = new JLabel("Club");
@@ -80,7 +80,6 @@ public class HomePage implements ActionListener {
         btn_logout.setBounds(665, 10, 120, 40);
         btn_logout.setBackground(new Color(54, 16, 58));
         pan.add(btn_logout);
-
 
         btn_logout.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {

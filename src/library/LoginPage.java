@@ -21,6 +21,7 @@ public class LoginPage implements ActionListener {
     public LoginPage(){
         fr=new JFrame("Login Page");
 
+        //Panels
         pan = new JPanel();
         pan.setBounds(120, 70, 430, 500);
         pan.setBackground(Color.white);

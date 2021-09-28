@@ -21,6 +21,7 @@ public class RegisterPage implements ActionListener {
     public RegisterPage() {
         fr = new JFrame("Registration Page");
 
+        //Panels
         pan = new JPanel();
         pan.setBounds(90, 60, 490, 500);
         pan.setBackground(Color.white);
